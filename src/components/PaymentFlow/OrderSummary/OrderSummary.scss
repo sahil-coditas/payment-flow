@@ -1,0 +1,19 @@
+.cart{
+    max-height: 8rem;
+    overflow-y: auto;
+    padding: 1rem 0;
+
+        .item-details{
+            width: 100%;
+
+            .text-box{
+                width: 100%;
+            }
+        }
+}
+
+.justify{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
