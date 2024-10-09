@@ -1,6 +1,3 @@
-import { useForm, Controller } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { createYupSchema } from './Schema';
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -12,6 +9,9 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import styled from '@mui/material/styles/styled';
 import OTPInput from '../OTPInput/OTPInput';
+import { useForm, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { createYupSchema } from './Schema';
 import { useState, useEffect } from 'react';
 import { getPayment } from '../../../utils/common/helper/payment.api';
 import { useNavigate } from 'react-router-dom';

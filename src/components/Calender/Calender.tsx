@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useState } from 'react';
 import dayjs from '../../utils/common/helper/dayJS';
 import './Calender.scss';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import {
   CalendarContainer,
   CustomCalendar,
