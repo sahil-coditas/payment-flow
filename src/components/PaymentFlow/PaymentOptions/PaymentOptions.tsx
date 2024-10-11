@@ -15,7 +15,7 @@ import { createYupSchema } from './Schema';
 import { useState, useEffect } from 'react';
 import { getPayment } from '../../../utils/common/helper/payment.api';
 import { useNavigate } from 'react-router-dom';
-import { ButtonInterface, FormValues } from './IPaymentOptions';
+import { ButtonInterface, FieldConfig, FormValues } from './IPaymentOptions';
 import Button from '../../Button/Button';
 import Input from '../../Input/Input';
 
@@ -51,7 +51,7 @@ function PaymentOptions() {
     watch,
     setValue,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<any>({
     resolver: yupResolver(createYupSchema(currentStep.slide.fields)),
     defaultValues: {
       paymentMethod: 'card',
@@ -154,7 +154,7 @@ function PaymentOptions() {
             </FormControl>
 
             <StyledBox>
-              {currentStep.slide.fields.map((field: any) => {
+              {currentStep.slide.fields.map((field: FieldConfig) => {
                 switch (field.component) {
                   case 'TextField':
                     return (
@@ -179,7 +179,7 @@ function PaymentOptions() {
                         <Box sx={{ minHeight: '1.5rem', paddingTop: '0.3rem' }}>
                           {!!errors && (
                             <Typography variant="h6" color="red">
-                              {errors[field.name as keyof FormValues]?.message}
+                              {String(errors[field.name as keyof FormValues]?.message || '')}
                             </Typography>
                           )}
                         </Box>
